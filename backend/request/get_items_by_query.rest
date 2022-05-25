@@ -1,0 +1,3 @@
+### GET ITEMS BY QUERY
+
+GET  http://localhost:3001/api/items?search=Motorola

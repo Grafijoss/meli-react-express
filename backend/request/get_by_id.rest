@@ -1,0 +1,3 @@
+### GET ITEM BY ID
+
+GET  http://localhost:3001/api/items/MLA1108287343

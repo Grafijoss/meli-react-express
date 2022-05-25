@@ -1,0 +1,15 @@
+### GET ITEMS BY QUERY
+
+https://api.mercadolibre.com/sites/MLA/search?q=Motorola
+
+### GET ITEM DETAIL BY ID
+
+https://api.mercadolibre.com/items/MLA1108287343
+
+### GET ITEM DESCRIPTION BY ID
+
+https://api.mercadolibre.com/items/MLA1108287343/description
+
+### GET CATEGORY DETAIL
+
+https://api.mercadolibre.com/categories/MLA82085
