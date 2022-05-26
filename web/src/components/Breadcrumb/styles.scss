@@ -1,0 +1,17 @@
+.breadcrumb {
+    width: 100%;
+
+    &__item {
+        font-size: 14px;
+        line-height: 50px;
+
+        & + & {
+            margin-left: 10px;
+            &::before{
+              content: '|';
+            margin-right: 10px;
+
+            }
+        }
+    }
+}

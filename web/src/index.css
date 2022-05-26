@@ -1,13 +1,21 @@
 @import "./normalize.css";
 
 :root {
-  --background-body: #ffffff;
+  --background-body: #e0e0e0;
   --background-card: #3c3e44;
-  --background-gray: #e0e0e0;
+  --background-white: #ffffff;
   --background-yellow: #fff159;
   --background-green: #11555f;
   --text-white: #ffffff;
   --text-black: #000000;
   --text-gray: #828282;
+  --gray-light: #eaeaea;
+
+  --color-shadow-large: 0 8px 24px rgba(140, 149, 159, 0.2);
   --width-container: 960px;
+}
+
+body {
+  background: var(--background-body);
+  color: var(--text-gray)
 }

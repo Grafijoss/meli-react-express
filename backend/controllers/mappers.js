@@ -12,22 +12,24 @@ const mapResultsCategories = (filters = {}) => {
 
 const mapItems = (results = []) => (
 
-  results.map((result) => {
-    const [amount, decimals] = result.price.toString().split('.')
+  results
+    .filter((_, idx) => idx < 4)
+    .map((result) => {
+      const [amount, decimals] = result.price.toString().split('.')
 
-    return ({
-      id: result.id,
-      title: result.title,
-      price: {
-        currency: result.currency_id,
-        amount: parseInt(amount, 10),
-        decimals: parseInt(decimals, 10) || 0
-      },
-      picture: result.thumbnail,
-      condition: result.condition,
-      free_shipping: result.shipping?.free_shipping
+      return ({
+        id: result.id,
+        title: result.title,
+        price: {
+          currency: result.currency_id,
+          amount: parseInt(amount, 10),
+          decimals: parseInt(decimals, 10) || 0
+        },
+        picture: result.thumbnail,
+        condition: result.condition,
+        free_shipping: result.shipping?.free_shipping
+      })
     })
-  })
 )
 
 const mapItemDetail = (item) => {

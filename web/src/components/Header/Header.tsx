@@ -1,9 +1,12 @@
 import { useState } from 'react'
+import { useNavigate, Link } from 'react-router-dom'
 import './styles.scss'
 import searchIcon from '../icons/search.svg'
 
 const Header = () => {
   const [search, setSearch] = useState('')
+
+  const navigate = useNavigate()
 
   const handlerOnChage = (event: React.ChangeEvent<HTMLInputElement>) => {
     setSearch(event.target.value)
@@ -12,13 +15,15 @@ const Header = () => {
   const handlerOnSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault()
 
-    alert(search)
+    navigate(`items?search=${search}`)
   }
 
   return (
     <header className='header'>
       <div className='header__content'>
-        <button className='header__logo-meli' style={{ backgroundImage: 'url("images/meli-logo.png")' }} />
+        <Link to='/'>
+          <button className='header__logo-meli' style={{ backgroundImage: 'url("images/meli-logo.png")' }} />
+        </Link>
         <form
           onSubmit={handlerOnSubmit}
           className='header__search-form'
