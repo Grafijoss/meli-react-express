@@ -37,15 +37,17 @@ router.get('/items/:id', async (request, response) => {
 
   const itemDetailById = await getItemById(id)
   const description = await getItemDescriptionById(id)
-  const categories = await getCategoriesById(itemDetailById.item.categoryId)
+  const categories = await getCategoriesById(itemDetailById.categoryId)
 
   response.send({
     author: {
       name: 'Jose',
       lastname: 'Montenegro'
     },
-    ...itemDetailById,
-    description,
+    item: {
+      description,
+      ...itemDetailById
+    },
     categories
   })
 })

@@ -35,23 +35,22 @@ const mapItems = (results = []) => (
 const mapItemDetail = (item) => {
   const [amount, decimals] = item.price.toString().split('.')
   const { pictures } = item
-  const { url: pictureUrl } = pictures.find(pic => pic.size === '500x500')
+  const maxSizeImage = pictures.length - 1
+  const { url: pictureUrl } = pictures[maxSizeImage]
 
   return ({
-    item: {
-      id: item.id,
-      title: item.title,
-      price: {
-        currency: item.currency_id,
-        amount: parseInt(amount, 10),
-        decimals: parseInt(decimals, 10) || 0
-      },
-      picture: pictureUrl,
-      condition: item.condition,
-      free_shipping: item.shipping?.free_shipping,
-      sold_quantity: item.sold_quantity,
-      categoryId: item.category_id
-    }
+    id: item.id,
+    title: item.title,
+    price: {
+      currency: item.currency_id,
+      amount: parseInt(amount, 10),
+      decimals: parseInt(decimals, 10) || 0
+    },
+    picture: pictureUrl,
+    condition: item.condition,
+    free_shipping: item.shipping?.free_shipping,
+    sold_quantity: item.sold_quantity,
+    categoryId: item.category_id
   })
 }
 

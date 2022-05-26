@@ -11,6 +11,18 @@ const getItemsByQueryProvider = async (search: string | null) => {
   return {}
 }
 
+const getItemByIdProvider = async (id: string | null) => {
+  if (id) {
+    const searchData = await axios(`http://localhost:3001/api/items/${id}`)
+      .then(({ data }) => data)
+
+    return searchData
+  }
+
+  return {}
+}
+
 export {
-  getItemsByQueryProvider
+  getItemsByQueryProvider,
+  getItemByIdProvider
 }

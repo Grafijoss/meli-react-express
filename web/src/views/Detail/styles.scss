@@ -1,0 +1,71 @@
+@import '../../placeholders.scss';
+
+.detail {
+    @extend %main-container;
+    color: var(--gray-dark);
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas: 
+    "image image info"
+    "description description .";
+    padding: 40px;
+
+    &__image {
+        grid-area: image;
+        display: flex;
+        justify-content: center;
+    }
+
+    &__info {
+        grid-area: info;
+
+        &__condition {
+            margin-bottom: 10px;
+        }
+
+        &__title {
+            font-size: 24px;
+            line-height: 30px;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        &__price {
+            font-size: 36px;
+            margin-bottom: 48px;
+            &::before {
+                content: '$';
+                margin-right: 16px;
+                font-size: 40px;
+            }
+            span {
+                font-size: 20px;
+                margin-left: 5px;
+                position: relative;
+                top: -10px;
+                &::before {
+                    content: '0';
+                }
+            }
+        }
+
+        &__button {
+            background: var(--background-blue);
+            border-radius: 6px;
+            color: var(--text-white);
+            line-height: 48px;
+            width: 100%;
+        }
+    }
+
+    &__description {
+        grid-area: description;
+        padding-top: 40px;
+        overflow: hidden;
+
+        &__title {
+            font-size: 30px;
+            margin-bottom: 16px;
+        }
+    }
+}

@@ -22,7 +22,8 @@ const getItemById = async (id) => {
 
     return mapItemDetail(item)
   } catch (err) {
-    return err
+    console.log(err)
+    return {}
   }
 }
 
@@ -33,18 +34,22 @@ const getItemDescriptionById = async (id) => {
 
     return description
   } catch (err) {
-    return err
+    console.log(err)
+    return ''
   }
 }
 
 const getCategoriesById = async (categorieId) => {
+  if (!categorieId) return {}
+
   try {
     const categories = await axios(`https://api.mercadolibre.com/categories/${categorieId}`)
       .then(({ data }) => data)
 
     return mapCategories(categories?.path_from_root || [])
   } catch (err) {
-    return err
+    console.log(err)
+    return []
   }
 }
 

@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react'
-import { useSearchParams } from 'react-router-dom'
 import { getItemsByQueryProvider } from '../../services'
 import Breadcrumb from '../../components/Breadcrumb/Breadcrumb'
 import SearchItem from '../../components/SearchItem/SearchItem'
@@ -24,7 +23,9 @@ const Results = ({ search }: {search: string | null}) => {
   }
 
   useEffect(() => {
-    fetchItemsAndCategories(search)
+    if (search) {
+      fetchItemsAndCategories(search)
+    }
   }, [search])
 
   return (
