@@ -1,6 +1,9 @@
 .items-container {
+    background: var(--background-white);
+    box-shadow: var(--color-shadow-large);
+    border-radius: 5px;
+    border: solid 1px var(--gray-light);
     display: grid;
-    gap: 16px;
     grid-template-columns: repeat(1, 100%);
     justify-content: center;
 }

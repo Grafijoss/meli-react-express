@@ -1,14 +1,14 @@
 .item {
-    background: var(--background-white);
-    box-shadow: var(--color-shadow-large);
-    border-radius: 5px;
-    border: solid 1px var(--gray-light);
     display: flex;
     overflow: hidden;
     justify-content: space-between;
-    padding: 20px;
+    padding: 30px 20px;
     height: auto;
     width: 100%;
+
+    & + & {
+        border-top: 1px solid var(--background-body);
+    }
 
     &__image {
         overflow: hidden;
