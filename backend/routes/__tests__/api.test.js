@@ -72,7 +72,7 @@ describe('routes', () => {
       expect(response.body.item).toHaveProperty('sold_quantity', 250)
       expect(response.body.item).toHaveProperty('categoryId', 'MLA82085')
 
-      expect(response.body).toHaveProperty('description')
+      expect(response.body.item).toHaveProperty('description')
       expect(response.body).toHaveProperty('categories')
     })
   })

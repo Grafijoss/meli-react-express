@@ -1,0 +1,36 @@
+.loading {
+    position: relative;
+    height: 45px;
+    margin: 50px 0;
+    width: 100%;
+}
+
+.animation {
+    font-size: 24px;
+    left: 50%;
+    position: absolute;
+    transform: translateX(-70px);
+    &:after {
+        animation-name: ellipsis;
+        animation-duration: 900ms;
+        animation-iteration-count: infinite;
+        animation-timing-function: steps(4,end);
+        content: "...";
+        display: inline-block;
+        overflow: hidden;
+        vertical-align: bottom;
+        width: 0px;
+    }
+}
+
+@keyframes ellipsis {
+    to {
+      width: 1.25em;    
+    }
+  }
+  
+  @-webkit-keyframes ellipsis {
+    to {
+      width: 1.25em;    
+    }
+  }

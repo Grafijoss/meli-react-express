@@ -2,11 +2,13 @@ import { useEffect, useState } from 'react'
 import { getItemsByQueryProvider } from '../../services'
 import Breadcrumb from '../../components/Breadcrumb/Breadcrumb'
 import SearchItem from '../../components/SearchItem/SearchItem'
+import Loading from '../../components/Loading/Loading'
 import './styles.scss'
 
 const Results = ({ search }: {search: string | null}) => {
   const [categories, setCategories] = useState([])
   const [items, setItems] = useState([])
+  const [loading, setLoading] = useState(true)
 
   const fetchItemsAndCategories = async (search: string | null) => {
     try {
@@ -17,6 +19,7 @@ const Results = ({ search }: {search: string | null}) => {
 
       setCategories(categoriesProvider)
       setItems(itemsProvider)
+      setLoading(false)
     } catch (err) {
       console.log(err)
     }
@@ -27,6 +30,10 @@ const Results = ({ search }: {search: string | null}) => {
       fetchItemsAndCategories(search)
     }
   }, [search])
+
+  if (loading) {
+    return <Loading />
+  }
 
   return (
     <>

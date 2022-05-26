@@ -3,9 +3,11 @@ import { useParams } from 'react-router-dom'
 import './styles.scss'
 import Breadcrumb from '../../components/Breadcrumb/Breadcrumb'
 import { getItemByIdProvider } from '../../services'
+import Loading from '../../components/Loading/Loading'
 
 const Detail = () => {
   const [categories, setCategories] = useState([])
+  const [loading, setLoading] = useState(true)
   const [item, setItem] = useState<ItemDetail>()
   const { id } = useParams()
 
@@ -19,6 +21,7 @@ const Detail = () => {
 
       setCategories(categoriesProvider)
       setItem(itemProvider)
+      setLoading(false)
     } catch (err) {
       console.log(err)
     }
@@ -36,6 +39,10 @@ const Detail = () => {
         currency: price.currency
       }
     ).format(price.amount)
+  }
+
+  if (loading) {
+    return <Loading />
   }
 
   return (

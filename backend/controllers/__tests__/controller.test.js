@@ -30,15 +30,14 @@ describe('controllers', () => {
 
     const itemsById = await getItemById()
 
-    expect(itemsById).toHaveProperty('item')
-    expect(itemsById.item).toHaveProperty('id')
-    expect(itemsById.item).toHaveProperty('title')
-    expect(itemsById.item).toHaveProperty('price')
-    expect(itemsById.item).toHaveProperty('picture')
-    expect(itemsById.item).toHaveProperty('condition', 'new')
-    expect(itemsById.item).toHaveProperty('free_shipping', true)
-    expect(itemsById.item).toHaveProperty('sold_quantity', 250)
-    expect(itemsById.item).toHaveProperty('categoryId', 'MLA82085')
+    expect(itemsById).toHaveProperty('id')
+    expect(itemsById).toHaveProperty('title')
+    expect(itemsById).toHaveProperty('price')
+    expect(itemsById).toHaveProperty('picture')
+    expect(itemsById).toHaveProperty('condition', 'new')
+    expect(itemsById).toHaveProperty('free_shipping', true)
+    expect(itemsById).toHaveProperty('sold_quantity', 250)
+    expect(itemsById).toHaveProperty('categoryId', 'MLA82085')
   })
 
   test('getItemDescriptionById should return the data populated correctly', async () => {
@@ -54,7 +53,7 @@ describe('controllers', () => {
 
     const expected = ['Computación', 'Tablets y Accesorios', 'Tablets']
 
-    const categoriesById = await getCategoriesById()
+    const categoriesById = await getCategoriesById('categortId')
 
     expect(categoriesById).toEqual(expected)
   })

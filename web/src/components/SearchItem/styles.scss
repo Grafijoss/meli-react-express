@@ -37,7 +37,7 @@
 
             &.free {
                 &::after {
-                    background: green;
+                    background: var(--background-green);
                     border-radius: 50%;
                     content: "";
                     margin-left: 10px;
