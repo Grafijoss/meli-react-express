@@ -3,6 +3,11 @@
     height: 60px;
     width: 100%;
 
+    a {
+        align-items: center;
+        display: flex;
+    }
+
     &__content {
         align-items: center;
         display: flex;
@@ -15,7 +20,6 @@
 
     &__logo-meli {
         width: 50px;
-        height: 34px;
     }
 
     &__search-form {
@@ -24,6 +28,9 @@
         width: calc(100% - 70px);
 
         &__input {
+            border-radius: 5px 0 0 5px;
+            color: var(--text-gray);
+            font-size: 18px;
             height: 40px;
             padding: 0 15px;
             width: calc(100% - 40px);
@@ -40,7 +47,7 @@
         }
 
         &__icon {
-            width: 18px;
+            width: 16px;
         }
 
     }

@@ -30,7 +30,9 @@ const Header = ({ searchValue }: {searchValue: string | null}) => {
     <header className='header'>
       <div className='header__content'>
         <Link to='/'>
-          <button className='header__logo-meli' style={{ backgroundImage: 'url("images/meli-logo.png")' }} />
+          <button className='header__logo-meli'>
+            <img src='images/ml-logo.png' alt='' />
+          </button>
         </Link>
         <form
           onSubmit={handlerOnSubmit}
@@ -39,7 +41,7 @@ const Header = ({ searchValue }: {searchValue: string | null}) => {
           <input
             type='text'
             className='header__search-form__input'
-            placeholder='Buscar productos, marcas y más…'
+            placeholder='Nunca dejes de buscar'
             onChange={handlerOnChage}
             value={search}
           />

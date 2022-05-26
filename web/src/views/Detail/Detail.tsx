@@ -64,7 +64,6 @@ const Detail = () => {
           {item?.price && (
             <p className='detail__info__price'>
               {fortamPrice(item.price)}
-              <span>{item.price.decimals}</span>
             </p>
           )}
 

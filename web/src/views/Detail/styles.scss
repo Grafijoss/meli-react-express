@@ -2,13 +2,13 @@
 
 .detail {
     @extend %main-container;
-    color: var(--gray-dark);
+    color: var(--text-dark);
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 680px 1fr;
     grid-template-areas: 
     "image image info"
     "description description .";
-    padding: 40px;
+    padding: 32px;
 
     &__image {
         grid-area: image;
@@ -20,32 +20,24 @@
         grid-area: info;
 
         &__condition {
-            margin-bottom: 10px;
+            font-size: 14px;
+            margin-bottom: 16px;
         }
 
         &__title {
             font-size: 24px;
             line-height: 30px;
             font-weight: 600;
-            margin-bottom: 20px;
+            margin-bottom: 32px;
         }
 
         &__price {
-            font-size: 36px;
-            margin-bottom: 48px;
+            font-size: 46px;
+            margin-bottom: 32px;
             &::before {
                 content: '$';
                 margin-right: 16px;
-                font-size: 40px;
-            }
-            span {
-                font-size: 20px;
-                margin-left: 5px;
-                position: relative;
-                top: -10px;
-                &::before {
-                    content: '0';
-                }
+                font-size: 48px;
             }
         }
 
@@ -65,8 +57,12 @@
         overflow: hidden;
 
         &__title {
-            font-size: 30px;
-            margin-bottom: 16px;
+            font-size: 28px;
+            margin-bottom: 32px;
+        }
+
+        &__description {
+            font-size: 16px;
         }
     }
 }

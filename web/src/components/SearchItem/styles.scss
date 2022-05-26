@@ -1,4 +1,5 @@
 .item {
+    color: var(--text-dark);
     display: flex;
     overflow: hidden;
     justify-content: space-between;
@@ -12,11 +13,12 @@
 
     &__image {
         overflow: hidden;
-        height: 200px;
-        width: 200px;
+        height: 180px;
+        width: 180px;
         img {
             height: 100%;
             object-fit: cover;
+            border-radius: 4px;
             width: 100%;
         }
     }
@@ -27,33 +29,32 @@
 
         &__price {
             font-size: 24px;
-            margin-bottom: 20px;
+            margin-bottom: 32px;
 
             &::before {
                 content: '$';
+                display: inline-block;
+                vertical-align: top;
                 font-size: 26px;
                 margin-right: 5px;
             }
 
-            &.free {
-                &::after {
-                    background: var(--background-green);
-                    border-radius: 50%;
-                    content: "";
-                    margin-left: 10px;
-                    display: inline-block;
-                    height: 15px;
-                    width: 15px;
-                }
+            span {
+                display: inline-block;
+                margin-left: 10px;
+                vertical-align: middle;
+                width: 25px;
             }
+
         }
 
         &__title {
-            font-size: 16px;
+            font-size: 18px;
         }
     }
 
     &__col-status {
+        font-size: 12px;
         padding: 20px 0;
         width: 200px;
     }

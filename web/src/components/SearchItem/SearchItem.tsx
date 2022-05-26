@@ -26,9 +26,10 @@ const SearchItem = ({ item }: {item: Item}) => {
         </div>
         <div className='item__col-info'>
           <p
-            className={`item__col-info__price ${freeShipping ? 'free' : ''}`}
+            className='item__col-info__price'
           >
             {formattedPrice}
+            <span><img src='images/ic_shippin.png' alt='Icono shippin' /></span>
           </p>
           <p className='item__col-info__title'>
             {title}
