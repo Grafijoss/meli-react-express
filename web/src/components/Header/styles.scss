@@ -1,0 +1,48 @@
+.header {
+    background: var(--background-yellow);
+    height: 50px;
+    width: 100%;
+
+    &__content {
+        align-items: center;
+        display: flex;
+        height: 50px;
+        justify-content: space-between;
+        margin: 0 auto;
+        max-width: var(--width-container);
+        width: 100%;
+    }
+
+    &__logo-meli {
+        width: 50px;
+        height: 34px;
+    }
+
+    &__search-form {
+        box-shadow: 0 1px 2px 0 rgba(0,0,0,.2);
+        display: flex;
+        width: calc(100% - 70px);
+
+        &__input {
+            height: 40px;
+            padding: 0 15px;
+            width: calc(100% - 40px);
+        }
+
+        &__button {
+            align-items: center;
+            background: var(--background-gray);
+            justify-content: center;
+            border-radius: 0 5px 5px 0;
+            display: flex;
+            height: 40px;
+            width: 40px;
+
+        }
+
+        &__icon {
+            width: 18px;
+        }
+
+    }
+}
