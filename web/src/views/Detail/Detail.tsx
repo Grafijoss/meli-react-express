@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
+import { Helmet } from 'react-helmet'
 import './styles.scss'
 import Breadcrumb from '../../components/Breadcrumb/Breadcrumb'
 import { getItemByIdProvider } from '../../services'
@@ -47,6 +48,9 @@ const Detail = () => {
 
   return (
     <>
+      <Helmet>
+        <title>Detalle {id}</title>
+      </Helmet>
       <Breadcrumb categories={categories} />
       <article className='detail'>
         <div className='detail__image'>

@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import { Helmet } from 'react-helmet'
 import { getItemsByQueryProvider } from '../../services'
 import Breadcrumb from '../../components/Breadcrumb/Breadcrumb'
 import SearchItem from '../../components/SearchItem/SearchItem'
@@ -37,6 +38,9 @@ const Results = ({ search }: {search: string | null}) => {
 
   return (
     <>
+      <Helmet>
+        <title>Resultados para {search}</title>
+      </Helmet>
       <Breadcrumb categories={categories} />
       {items.length > 0 && (
         <div className='items-container'>
