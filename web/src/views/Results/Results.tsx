@@ -5,8 +5,7 @@ import Breadcrumb from '../../components/Breadcrumb/Breadcrumb'
 import SearchItem from '../../components/SearchItem/SearchItem'
 import './styles.scss'
 
-const Results = () => {
-  const [searchParams] = useSearchParams()
+const Results = ({ search }: {search: string | null}) => {
   const [categories, setCategories] = useState([])
   const [items, setItems] = useState([])
 
@@ -17,10 +16,6 @@ const Results = () => {
         items: itemsProvider
       } = await getItemsByQueryProvider(search)
 
-      console.log({
-        itemsProvider
-      })
-
       setCategories(categoriesProvider)
       setItems(itemsProvider)
     } catch (err) {
@@ -28,15 +23,13 @@ const Results = () => {
     }
   }
 
-  const search = searchParams.get('search')
-
   useEffect(() => {
     fetchItemsAndCategories(search)
   }, [search])
 
   return (
     <>
-      {categories.length > 0 && <Breadcrumb categories={categories} />}
+      <Breadcrumb categories={categories} />
       {items.length > 0 && (
         <div className='items-container'>
           {

@@ -1,9 +1,9 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { useNavigate, Link } from 'react-router-dom'
 import './styles.scss'
 import searchIcon from '../icons/search.svg'
 
-const Header = () => {
+const Header = ({ searchValue }: {searchValue: string | null}) => {
   const [search, setSearch] = useState('')
 
   const navigate = useNavigate()
@@ -17,6 +17,14 @@ const Header = () => {
 
     navigate(`items?search=${search}`)
   }
+
+  useEffect(() => {
+    let textValue = ''
+    if (searchValue) {
+      textValue = searchValue
+    }
+    setSearch(textValue)
+  }, [searchValue])
 
   return (
     <header className='header'>
@@ -33,6 +41,7 @@ const Header = () => {
             className='header__search-form__input'
             placeholder='Buscar productos, marcas y más…'
             onChange={handlerOnChage}
+            value={search}
           />
           <button className='header__search-form__button'>
             <img className='header__search-form__icon' src={searchIcon} alt='Icono de buscar' />
