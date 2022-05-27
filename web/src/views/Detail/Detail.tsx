@@ -15,10 +15,6 @@ const Detail = () => {
   const fetchItemById = async (id: string | null) => {
     try {
       const { categories: categoriesProvider, item: itemProvider } = await getItemByIdProvider(id)
-      console.log({
-        itemProvider,
-        categoriesProvider
-      })
 
       setCategories(categoriesProvider)
       setItem(itemProvider)
@@ -43,7 +39,7 @@ const Detail = () => {
   }
 
   if (loading) {
-    return <Loading />
+    return <Loading testName='loading-detail-page' />
   }
 
   return (
@@ -52,21 +48,21 @@ const Detail = () => {
         <title>Detalle {id}</title>
       </Helmet>
       <Breadcrumb categories={categories} />
-      <article className='detail'>
+      <article className='detail' data-testid='detail-container'>
         <div className='detail__image'>
           {item?.picture && (
             <img src={item.picture} alt='Imagen del producto' />
           )}
         </div>
         <div className='detail__info'>
-          <p className='detail__info__condition'>
+          <p className='detail__info__condition' data-testid='detail-condition'>
             {item?.condition}
           </p>
-          <h2 className='detail__info__title'>
+          <h2 className='detail__info__title' data-testid='detail-title'>
             {item?.title}
           </h2>
           {item?.price && (
-            <p className='detail__info__price'>
+            <p className='detail__info__price' data-testid='detail-price'>
               {fortamPrice(item.price)}
             </p>
           )}

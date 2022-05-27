@@ -27,7 +27,7 @@ const Header = ({ searchValue }: {searchValue: string | null}) => {
   }, [searchValue])
 
   return (
-    <header className='header'>
+    <header className='header' data-testid='header'>
       <div className='header__content'>
         <Link to='/'>
           <button className='header__logo-meli'>
@@ -44,6 +44,7 @@ const Header = ({ searchValue }: {searchValue: string | null}) => {
             placeholder='Nunca dejes de buscar'
             onChange={handlerOnChage}
             value={search}
+            data-testid='buscador'
           />
           <button className='header__search-form__button'>
             <img className='header__search-form__icon' src={searchIcon} alt='Icono de buscar' />

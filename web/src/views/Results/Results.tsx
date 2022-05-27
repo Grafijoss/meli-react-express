@@ -23,6 +23,7 @@ const Results = ({ search }: {search: string | null}) => {
       setLoading(false)
     } catch (err) {
       console.log(err)
+      setItems([])
     }
   }
 
@@ -33,7 +34,7 @@ const Results = ({ search }: {search: string | null}) => {
   }, [search])
 
   if (loading) {
-    return <Loading />
+    return <Loading testName='loading-results-page' />
   }
 
   return (
