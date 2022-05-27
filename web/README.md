@@ -23,9 +23,12 @@ npm run test
 
 ## Construido con 🛠️
 
-- Create React App
+- HTML
+- CSS (SASS)
+- React
 - Typescript
 - Axios
 - Jest
 - testing-library
+- SASS
 
