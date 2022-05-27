@@ -3,7 +3,7 @@ import { act, render, screen } from '@testing-library/react'
 import { MemoryRouter } from 'react-router-dom'
 import '@testing-library/jest-dom'
 import Detail from '../../App'
-import getItemsByQueryProvider from './ __mocks__/getItemsByQueryProvider.json'
+import getItemByIdProvider from './getItemByIdProvider.mock.json'
 
 jest.mock('axios')
 
@@ -16,7 +16,7 @@ describe('Detail page', () => {
     }
   }
   test('Should render correctly with data', async () => {
-    axios.mockResolvedValue({ data: getItemsByQueryProvider })
+    axios.mockResolvedValue({ data: getItemByIdProvider })
     const promise = Promise.resolve()
     render(
       <MemoryRouter initialEntries={['/items/456']}>

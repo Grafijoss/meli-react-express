@@ -44,7 +44,7 @@ const Results = ({ search }: {search: string | null}) => {
       </Helmet>
       <Breadcrumb categories={categories} />
       {items.length > 0 && (
-        <div className='items-container'>
+        <div className='items-container' data-testid='results-container'>
           {
             items.map((item: Item) => (
               <SearchItem item={item} key={item.id} />

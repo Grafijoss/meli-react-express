@@ -1,0 +1,60 @@
+{
+    "author": {
+      "name": "Jose",
+      "lastname": "Montenegro"
+    },
+    "categories": [
+      "Celulares y Teléfonos",
+      "Celulares y Smartphones"
+    ],
+    "items": [
+      {
+        "id": "MLA1132139245",
+        "title": "Moto E6 Play 32 Gb Azul 2 Gb Ram",
+        "price": {
+          "currency": "ARS",
+          "amount": 59899,
+          "decimals": 0
+        },
+        "picture": "http://http2.mlstatic.com/D_943067-MLA40124477118_122019-I.jpg",
+        "condition": "new",
+        "free_shipping": true
+      },
+      {
+        "id": "MLA856773041",
+        "title": "Motorola Xt1922 G6 Play Sin Detalles Con Garantia",
+        "price": {
+          "currency": "ARS",
+          "amount": 22000,
+          "decimals": 0
+        },
+        "picture": "http://http2.mlstatic.com/D_900448-MLA32462080565_102019-O.jpg",
+        "condition": "new",
+        "free_shipping": true
+      },
+      {
+        "id": "MLA930670110",
+        "title": "Motorola Moto G6 Plus Bueno Indigo Liberado",
+        "price": {
+          "currency": "ARS",
+          "amount": 29499,
+          "decimals": 0
+        },
+        "picture": "http://http2.mlstatic.com/D_989948-MLA46850528118_072021-O.jpg",
+        "condition": "new",
+        "free_shipping": true
+      },
+      {
+        "id": "MLA1130538919",
+        "title": "Celular Motorola G6 Liberado 32gb",
+        "price": {
+          "currency": "ARS",
+          "amount": 15000,
+          "decimals": 0
+        },
+        "picture": "http://http2.mlstatic.com/D_604105-MLA48861360178_012022-O.jpg",
+        "condition": "new",
+        "free_shipping": false
+      }
+    ]
+  }
